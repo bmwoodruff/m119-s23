@@ -1,0 +1,40 @@
+---
+title: "Friday Apr 21 Document"
+author: "Ben"
+date: "2023-04-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Practice with functions in R
+
+Given $h(x) = \sqrt{3-x}$
+, we'll compute $h(-4)$ and $f(5)$
+ inside an R coding chunk.
+ 
+ Let's define the function first. 
+
+```{r}
+h <- function(x){sqrt(3-x)}
+```
+
+Now let's compute $h(-4)$ and $h(5)$. 
+```{r}
+h(-4)
+h(5)
+```
+ 
+Note that $h(5)$ is not defined, because 3-5 is negative. 
+
+You can actually perform computations inline as well, by typing something like $h(1)=`r h(1)`$.
+
+You can actually refer to things defined in previous code chunks. As an example, we can compute $h(-4)$ in a code chunk, and then refer to it later after having given it a name. 
+
+```{r, echo = FALSE}
+value <- h(-4)
+```
+
+We obtained $h(-4)=`r value`$.
