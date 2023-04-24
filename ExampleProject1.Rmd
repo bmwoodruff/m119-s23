@@ -1,0 +1,38 @@
+---
+title: "Example Project"
+author: "Ben"
+date: "2023-04-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+We're going to look at some data related to LED light bulbs, and what their percent intensity is after about 2100 hours.  Below we load the data, and you'll notice that the hours is 2104 hours. 
+
+```{r}
+library(data4led)
+dist <- led_time(2100)
+head(dist)
+```
+
+Let's make a histogram of the percent intensity of the 202 bulbs after 2104 hours. Notice that the shape of the histogram appears to be a bell curve. We'll discuss this curve more in the 
+
+```{r}
+hist(dist$percent_intensity)
+```
+
+The histogram above uses the count of how many bulbs are in each region. We can change this to a density histogram (showing what percent is in each group) by adding an option, as seen below. 
+
+```{r}
+hist(dist$percent_intensity, prob = TRUE)
+```
+
+Note that to read this histogram, the area of the rectangle tells us how much of the data lies in each region. The width of the rectange is 0.5, so between 101 and 101.5 we have a little more than (width)(height) = (0.5)(0.6) = 0.3, or 30% of the data.  
+
+
+
+
+
