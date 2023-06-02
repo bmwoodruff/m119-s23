@@ -18,3 +18,13 @@ solve_system(
   sum(i-1),
   sum(i-i^2)
 )
+
+n <- seq(1,44)
+solve_system(
+  sum(n),
+  sum(3+0*n),
+  sum(7+0*n),
+  sum(5+0*n),
+  sum(n),
+  sum(n^2)
+)
